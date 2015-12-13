@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="row">
+		<div id="profile" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+			<p><span class="filed">Name:</span> <%= @user.name %></p> 
+			<p><span class="filed">Surname:</span> <%= @user.surname %></p>
+			<p><span class="filed">Email:</span> <%= @user.email %></p>
+			<p><span class="filed">Age:</span> <%= @user.age %></p>
+			<%= link_to "Sign out", signout_path, method: "delete" %>
+		</div>
+	</div>
+</div>		

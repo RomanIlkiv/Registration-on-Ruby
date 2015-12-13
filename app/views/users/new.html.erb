@@ -1,0 +1,36 @@
+<%= form_for(@user) do |f|%>
+<div class="container">
+<%= render 'error_messages' %>
+<div id="my_form" class="row">
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+    <%= f.label :name, "Name: #{@user.errors[:name].join('')}" %><br>
+    <%= f.label :surname, "Surname: #{@user.errors[:surname].join('')}" %><br>
+    <%= f.label :email, "Email:" %><br>
+    <%= f.label :password, "Password:" %><br>
+    <%= f.label :password_confirmation, "Password confirmation:" %><br>
+    <%= f.label :sex, "Sex:" %><br>
+    <%= f.label :status, "Your duty:" %><br>
+    <%= f.label :age, "Age:" %><br>
+    <%= f.label :phone, "Phone number:" %><br>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <%= f.text_field :name %><br>
+    <%= f.text_field :surname %><br>
+    <%= f.email_field :email %><br>
+    <%= f.password_field :password %><br>
+    <%= f.password_field :password_confirmation %><br>
+    <%= f.radio_button(:sex, "male") %>
+    <%= f.label(:sex_male, "Male") %>
+    <%= f.radio_button(:sex, "female") %>
+    <%= f.label(:sex_female, "Female") %><br>
+    <%= f.select :status, [["Schoolchild",'school'],['Student','student'],['Worker','work'],["On 
+pension",'pension']] %><br>
+    <%= f.number_field :age, in: 1.0..100.0, step: 1.0 %><br>
+    <%= f.text_field :phone %><br>
+
+    <%= f.submit "Send" %>
+  </div>
+</div>
+
+</div>
+<% end %>
